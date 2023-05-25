@@ -1,0 +1,512 @@
+/* start varibles */
+:root {
+    --main-col: #29dfda;
+    --second-color: #2E4756;
+    --padding1: 20px;
+    --padding2: 25px;
+    --padding3: 30px;
+    --margin-xs: 10px;
+    --margin-sm: 20px;
+    --margin-md: 30px;
+    --margin-lg: 50px;
+    --margin-xl: 75px;
+    --margin-xxl: 100px;
+
+}
+
+/* end varibles */
+
+
+/* start global ruls  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+hr {
+    display: block;
+    height: 4px;
+    width: 250px;
+    border: 0;
+    border-top: 3px solid var(--main-col);
+    margin: 3em 0;
+    padding: 0;
+}
+
+
+/*small screen*/
+@media (min-width:767px) {
+    .container {
+        width: 740px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 950px;
+    }
+}
+
+@media (min-width:1199px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global ruls  */
+
+/* start componant */
+.container {
+    padding: 0 var(--padding2);
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+    align-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 78px;
+    color: rgb(167, 167, 167);
+    opacity: 0.2;
+    text-align: center;
+    margin: 0;
+    margin-top: var(--margin-xl);
+    letter-spacing: -3px;
+}
+
+.title::selection {
+    opacity: 1;
+    background-color: blue;
+    color: #fff;
+}
+
+.sub-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    margin-top: -30px;
+}
+
+/* end componant */
+
+/* start header  */
+.parent {
+    background-color: rgb(255, 255, 255);
+}
+
+.parent .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.links {
+    position: relative;
+}
+
+.links i {
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.links ul {
+    position: absolute;
+    right: 0;
+    background-color: #eee;
+    margin-top: var(--margin-xs);
+    width: 200px;
+    z-index: 999;
+    display: none;
+}
+
+.links:hover ul {
+    display: block;
+}
+
+.links ul::after {
+    position: absolute;
+    content: "";
+    border-color: transparent transparent #eee transparent;
+    border-width: 10px;
+    border-style: solid;
+    top: -22px;
+    right: 7px;
+}
+
+.links ul li {
+    list-style: none;
+    text-align: center;
+
+}
+
+.links ul li:not(:last-child) {
+    border-bottom: 1px solid #888;
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: black;
+    padding: var(--padding1);
+    display: inline-block;
+    width: 100%;
+}
+
+.links ul li a:hover {
+    transition: 0.4s ease;
+    margin-left: var(--margin-xs);
+}
+
+/* end header  */
+/* start landing */
+.landing {
+    background-image: url(../img/mountain.jpg);
+    height: calc(100vh - 77.8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.landing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.landing .landing-text h1 {
+    margin: 0;
+    font-size: 50px;
+    color: var(--main-col);
+}
+
+.landing-text p {
+    width: 350px;
+    margin-top: var(--margin-xs);
+}
+
+@media (max-width:767px) {
+    .landing .landing-text h1 {
+        font-size: 35px;
+    }
+
+    .landing-text p {
+        width: 300px;
+    }
+}
+
+/* start future  */
+.future {
+    height: fit-content;
+    background-color: #eee;
+    padding: 120px 0;
+}
+
+.future-card i {
+    font-size: 33px;
+    color: var(--main-col);
+}
+
+.future-text h2 {
+    margin-top: var(--margin-sm);
+    font-weight: 800;
+}
+
+.future-text p {
+    margin-top: var(--margin-xs);
+    opacity: 0.6;
+}
+
+/* end future  */
+
+/* end landing */
+/* start services  */
+.service .grid {
+    margin-top: var(--margin-xxl);
+}
+
+.col2 {
+    margin-top: var(--margin-xs);
+}
+
+.service-card {
+    display: flex;
+}
+
+.service-card i {
+    font-size: 30px;
+    color: var(--main-col);
+    margin-left: 30px;
+    flex-basis: 60px;
+}
+
+
+.service-text {
+    margin-left: var(--margin-md);
+}
+
+.service-text p {
+    margin-top: var(--margin-sm);
+}
+
+.col .service-card {
+    margin-bottom: var(--margin-md);
+}
+
+.image {
+    position: relative;
+    z-index: 2;
+}
+
+.image::before {
+    content: '';
+    background-color: var(--second-color);
+    width: 80px;
+    height: calc(100% + 100px);
+    position: absolute;
+    right: 0;
+    top: -50px;
+    z-index: -2;
+}
+
+@media (max-width:1199px) {
+    .image {
+        display: none;
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+/* end services  */
+/* strat portfolio */
+.portfolio {
+    background-color: #eee;
+    height: fit-content;
+}
+
+.portfolio .container {
+    margin-top: var(--margin-xl);
+}
+
+.project-card {
+    background-color: #fff;
+
+}
+
+.project-text {
+    text-align: start;
+    padding: var(--padding1);
+}
+
+.project-text p {
+    margin-top: var(--margin-xs);
+}
+
+.project-card img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+.btn-cont {
+    text-align: center;
+    height: 200px;
+    padding-top: var(--margin-xl);
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.btn:hover {
+    transition: 0.3s ease;
+    background-color: black;
+    color: #fff;
+}
+
+/* end portfolio */
+/* start about */
+.about .about-content {
+    margin-top: var(--margin-xl);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.img {
+    position: relative;
+}
+
+.img img {
+    height: 300px;
+    max-width: 100%;
+    margin-left: var(--margin-xl);
+    float: right;
+    position: relative;
+    text-align: center;
+}
+
+
+
+.img::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    left: 0;
+    top: -40px;
+    height: calc(100% + 80px);
+    background-color: rgb(234, 237, 240);
+}
+
+.img::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 199px;
+    border-left: 70px solid var(--main-col);
+    right: -150px;
+    /* left: 0px; */
+    border-bottom: 50px solid var(--main-col);
+    z-index: -2;
+    top: -3;
+    top: -20px;
+}
+
+@media (max-width:515px){
+    .img::after {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 199px;
+        border-left: 70px solid var(--main-col);
+        right: -100px;
+        /* left: 0px; */
+        border-bottom: 50px solid var(--main-col);
+        z-index: -2;
+        top: -3;
+        top: -20px;
+    }
+}
+
+
+@media (max-width:430px){
+    .img{
+        display: none;
+    }
+}
+
+
+
+.about-text {
+    align-self: center;
+    padding: var(--padding2) var(--padding3);
+    position: relative;
+    width: 600px;
+}
+
+@media (max-width:1199px) {
+    .about .about-content {
+        justify-content: center;
+    }
+
+    .img img {
+        margin-left: 0;
+        
+    }
+    
+    .about-text p,h4,hr{
+        margin-left: 200px;
+    }
+
+}
+
+@media (max-width:992px){
+    .about-text p,h4,hr{
+        margin-left: 0px;
+    }
+    .about-text{
+        margin-top: var(--margin-xl);
+
+    }
+}
+
+
+
+
+/* end about */
+
+/* start contact  */
+.contact{
+    background-color: #eee;
+    height: fit-content;
+    }
+
+.contact-text{
+    margin-top: var(--margin-xl);
+}
+.contact-text h1{
+    color: var(--second-color);
+}
+.contact-text a{
+    padding-left: var(--padding1);
+    text-decoration: none;
+    color: var(--main-col);
+    font-size: 33px;
+}
+.contact-text p{
+    padding-left: calc(var(--padding3) + 30px);
+    padding-bottom: calc(var(--padding3) + 50px);
+}
+i{
+    color: black;
+    font-size: 20px;
+}
+
+@media(max-width:767px){
+    .contact-text h1{
+        color: var(--second-color);
+        font-size: 30px;
+    }
+    .contact-text a{
+        padding-left: 0;
+        text-decoration: none;
+        color: var(--main-col);
+        font-size: 20px;
+    }
+    .contact-text p{
+        padding-left: calc(var(--padding3) );
+        padding-top: var(--padding2);
+        padding-bottom: calc(var(--padding3) + 50px);
+    }
+    i{
+        color: black;
+        font-size: 20px;
+    }
+}
+/* End contact  */
